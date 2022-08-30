@@ -1,0 +1,103 @@
+﻿Big Data
+Hadoop (HDFS, Map Reduce, Yarn)
+Sqoop
+Pig
+Flume
+Hive
+Spark
+Cloudera
+Databricks
+Pyspark
+Spark SQL
+Kafka
+NiFi
+Airflow
+
+Data Science
+SQL
+BBDD Relacionales
+BBDD No Relacionales
+Python
+Jira
+Trello
+Estadística
+Machine Learning
+Neo4j
+NLP
+PySpark
+
+Data Management
+SQL
+Pentaho
+Power Center
+Data Stage
+SAP Data Services
+Talend
+Business Intelligence
+SQL
+SSAS
+Power BI
+Qlik
+Tableau
+MicroStrategy
+DataFactory
+Synapse
+Azure DevOps
+Frontend
+HTML5
+CSS
+Flexbox
+JavaScript
+TypeScript
+WebPack
+Parcel
+Angular
+
+Backend
+Spring Boot
+JPA
+Hibernate
+HTTP
+Arquitectura Hexagonal
+CRUD
+Swagger
+HalExplorer
+Spring DevTools
+Java 17
+Mongo
+Spring Actuator
+Mockito
+JUnit
+Spring Security
+Kafka
+RabbitMQ
+Spring Cloud
+Feign
+Ribbon
+Hystrix
+Eureka
+Sleuth
+
+DevOps
+SSH
+Editor Vi
+Systemd
+LVM
+DNS
+SSL
+Shell Scrip
+Apache
+Nginx
+MySQL
+PostgreSQL
+AWS
+Azure
+GCP
+Docker
+Kubernetes
+GIT
+Jenkins
+Ansible
+Terraform
+Prometheus
+Kali Linux
