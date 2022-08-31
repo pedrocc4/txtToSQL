@@ -1,5 +1,5 @@
 # Lectura de ficheros 
-
+ 
 La aplicación en el directorio areas-tech lee desde el archivo proporcionado y crea sentencias para insertar en area y technologys
 La otra aplicación lee el archivo para crear sentencias de inserción en employee, position, user y email.
 
