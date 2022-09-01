@@ -4,10 +4,11 @@ import java.io.FileNotFoundException;
 
 public class Proceso {
     public static void main(String[] args) throws FileNotFoundException {
-        Lector lector = new Lector();
-        lector.cargarDatos("archivos.tsv");
-        System.out.println("Carga completada");
-        lector.toTxt();
+        LectorEmployee lectorEmployee = new LectorEmployee();
+        lectorEmployee.cargarPosiciones("posiciones.txt");
+        lectorEmployee.cargarDatos("employees.tsv");
+        System.out.println("Carga de empleados completada");
+        lectorEmployee.toTxt();
         System.out.println("Archivo exportado");
     }
 }

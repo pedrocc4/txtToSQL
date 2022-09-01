@@ -1,4 +1,4 @@
-package bosonit;
+package bosonit.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,12 +8,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Position {
-    private int id;
-    private char floor;
+    private String id;
+    private String floor;
     private String position;
     private int fk_office;
 
-    public Position(int id, char floor, String position) {
+    public Position(String id, String floor, String position) {
         this.id = id;
         this.floor = floor;
         this.position = position;

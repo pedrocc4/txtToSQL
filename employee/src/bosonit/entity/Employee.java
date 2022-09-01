@@ -1,4 +1,4 @@
-package bosonit;
+package bosonit.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

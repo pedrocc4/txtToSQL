@@ -1,5 +1,7 @@
 package lector;
 
+import lector.entity.Area;
+import lector.entity.Technology;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,8 +12,11 @@ import java.util.Set;
 
 @Data
 @NoArgsConstructor
-public class Lector {
-
+public class LectorAreaTech {
+    /*
+        NOTA: Descargar fichero de Areas y Tecnologias como txt
+        y renombrar a areaTech.txt
+     */
     private List<Area> listaAreas = new ArrayList<>();
     private List<Technology> listaTechnology = new ArrayList<>();
 

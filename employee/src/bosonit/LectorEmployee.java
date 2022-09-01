@@ -1,20 +1,51 @@
 package bosonit;
 
+import bosonit.entity.Email;
+import bosonit.entity.Employee;
+import bosonit.entity.Position;
+import bosonit.entity.User;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Data
-@NoArgsConstructor
-public class Lector {
+public class LectorEmployee {
 
-    private List<Employee> empleados = new ArrayList<>();
-    private List<User> users = new ArrayList<>();
-    private List<Email> emails = new ArrayList<>();
-    private List<Position> posiciones = new ArrayList<>();
+    private List<Employee> empleados;
+    private List<User> users;
+    private List<Email> emails;
+    private List<Position> posiciones;
+
+    public LectorEmployee() {
+        this.empleados = new ArrayList<>();
+        this.users = new ArrayList<>();
+        this.emails = new ArrayList<>();
+        this.posiciones = new ArrayList<>();
+
+    }
+
+    public void cargarPosiciones(String ruta) {
+        // Definicion variables necesarias
+        String linea;
+        String[] lectura;
+        FileReader f;
+        try {
+            f = new FileReader(ruta);
+            BufferedReader b = new BufferedReader(f);
+
+            // Leemos documento
+            while ((linea = b.readLine()) != null && !linea.isEmpty()) {
+                lectura = linea.split("\t");
+                posiciones.add(new Position(lectura[0], lectura[1], lectura[2]));
+            }
+
+            b.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void cargarDatos(String ruta) {
 
@@ -74,17 +105,23 @@ public class Lector {
                         employee.setFk_subcar(3);
                     }
 
-                    // User y position coincide con employee.id
+                    // User coincide con employee.id
                     employee.setFk_user(employee.getId());
-                    employee.setFk_position(employee.getId());
+
+                    // Busamos id position
+                    for (Position position : posiciones) {
+                        if (position.getFloor().charAt(0) == lectura[lectura.length - 1].charAt(1)
+                                && position.getPosition().equals(lectura[lectura.length - 2])) {
+                            employee.setFk_position(Integer.parseInt(position.getId()));
+                        }
+                    }
+
                     empleados.add(employee);
 
                     // Definimos users, emails y posiciones
                     String userName = employee.getEmail().split("@")[0];
                     users.add(new User(employee.getId(), userName, employee.getEmail()));
                     emails.add(new Email(employee.getId(), employee.getEmail()));
-                    posiciones.add(new Position(employee.getId(),
-                            lectura[lectura.length - 1].charAt(1), lectura[lectura.length - 2]));
                 }
             }
 
@@ -98,13 +135,6 @@ public class Lector {
     public void toTxt() throws FileNotFoundException {
         FileOutputStream txt = new FileOutputStream("datosSQL.txt");
         try (PrintWriter pw = new PrintWriter(txt)) {
-
-            // exportamos posiciones
-            posiciones.stream()
-                    .map(Position::toSQL)
-                    .forEach(pw::println);
-
-            pw.println();
 
             // exportamos empleados
             empleados.stream()

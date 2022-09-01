@@ -1,4 +1,4 @@
-package lector;
+package lector.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

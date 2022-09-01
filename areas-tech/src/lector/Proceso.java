@@ -5,10 +5,10 @@ import java.io.FileNotFoundException;
 public class Proceso {
     public static void main(String[] args) throws FileNotFoundException {
 
-        Lector lector = new Lector();
-        lector.cargarDatos("archivo.txt");
+        LectorAreaTech lectorAreaTech = new LectorAreaTech();
+        lectorAreaTech.cargarDatos("areaTech.txt");
         System.out.println("Archivo cargado y procesado");
-        lector.toTxt();
+        lectorAreaTech.toTxt();
         System.out.println("Fichero creado");
     }
 }
